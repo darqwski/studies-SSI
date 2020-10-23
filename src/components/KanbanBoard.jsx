@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './kanban-list.css';
 import KanbanList from './KanbanList';
-import cardList from '../constants/cardList';
 import { STATUS_IN_PROGRESS, STATUS_TODO, STATUS_DONE } from '../constants/statuses';
+import { KanbanContext } from './KanbanContext';
 
 const KanbanBoard = ({ title }) => {
+	const { cardList } = useContext(KanbanContext);
+
 	return (
 		<div className="list-container">
 			<KanbanList title="Tasks todo" cards={cardList.filter(({ status })=> status === STATUS_TODO)}  />

@@ -14,7 +14,7 @@ export default [
 		status: STATUS_TODO,
 		subTasks: [
 			{ subTaskId: 1, name: 'Write kanban board', done: false },
-			{ subTaskId: 1, name: 'Write single list element', done: false },
-			{ subTaskId: 1, name: 'Write toggle to list element', done: true },
+			{ subTaskId: 2, name: 'Write single list element', done: false },
+			{ subTaskId: 3, name: '<b>Write</b> toggle to list element', done: true },
 		] },
 ];
