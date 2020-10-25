@@ -10,9 +10,9 @@ const KanbanBoard = ({ title }) => {
 
 	return (
 		<div className="list-container">
-			<KanbanList title="Tasks todo" cards={cardList.filter(({ status })=> status === STATUS_TODO)}  />
-			<KanbanList title="Tasks in progress" cards={cardList.filter(({ status })=> status === STATUS_IN_PROGRESS)}  />
-			<KanbanList title="Tasks done" cards={cardList.filter(({ status })=> status === STATUS_DONE)}  />
+			<KanbanList title="Tasks todo" className="blue darken-2" cards={cardList.filter(({ status })=> status === STATUS_TODO)}  />
+			<KanbanList title="Tasks in progress" className="orange darken-2"  cards={cardList.filter(({ status })=> status === STATUS_IN_PROGRESS)}  />
+			<KanbanList title="Tasks done" className="green darken-2"  cards={cardList.filter(({ status })=> status === STATUS_DONE)}  />
 		</div>
 	);
 };

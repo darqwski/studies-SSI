@@ -1,7 +1,29 @@
 .list-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 1rem;
 }
 .list {
-
+    flex-grow: 1;
+    margin: 0.5rem;
+}
+.card {
+}
+.sub-section {
+    margin: 1rem;
+    padding: 1rem;
+}
+.sub-section {
+    display: flex;
+}
+.sub-section > p {
+    flex-grow: 1;
+}
+.sub-section > i {
+    padding: 1rem;
+    cursor: pointer;
+}
+.add-form {
+    padding: 1rem;
+    margin: 2rem;
 }
