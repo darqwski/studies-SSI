@@ -23,12 +23,12 @@ const KanbanContextManager = ({ children }) => {
 		setState([...filteredTasks, { ...task, subTasks: [...subTasks.filter(({ subTaskId: id })=>id !== subTaskId)] }]);
 
 	};
-	const addTask = (taskText, taskDescription ) => {
+	const addTask = (taskText, taskDescription, status ) => {
 		const newTask = {
 			id: Math.max(...state.map(({ id })=>id)) + 1,
 			title: taskText,
 			description: taskDescription,
-			status: STATUS_TODO
+			status
 		};
 		setState([...state, newTask]);
 	};
@@ -69,6 +69,10 @@ const KanbanContextManager = ({ children }) => {
 	);
 };
 
-KanbanContextManager.propTypes = {};
+KanbanContextManager.propTypes = {
+	children: PropTypes.oneOfType([
+		PropTypes.node, PropTypes.element
+	])
+};
 
 export default KanbanContextManager;

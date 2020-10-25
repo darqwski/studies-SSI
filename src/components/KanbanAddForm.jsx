@@ -1,15 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { KanbanContext } from './KanbanContext';
+import { STATUS_DONE, STATUS_IN_PROGRESS, STATUS_TODO } from '../constants/statuses';
 
 const KanbanAddForm = () => {
 	const [title, setTitle] = useState('');
 	const [desc, setDesc] = useState('');
+	const [status, setStatus] = useState(STATUS_TODO);
 	const { addTask } = useContext(KanbanContext);
 
 	const addNewTask = () => {
-		addTask(title,desc);
+		addTask(title,desc, status);
 		setTitle('');
 		setDesc('');
+		setStatus(STATUS_TODO);
 	};
 
 	return (
@@ -23,8 +26,13 @@ const KanbanAddForm = () => {
 				<label>Add task description</label>
 				<input value={desc} onChange={({ target: { value } })=>setDesc(value)} />
 			</div>
+			<label>Select status</label>
+			<select value={status} onChange={({ target: { value } })=>setStatus(value)}>
+				<option value={STATUS_TODO}>TODO</option>
+				<option value={STATUS_IN_PROGRESS}>IN PROGRESS</option>
+				<option value={STATUS_DONE}>DONE</option>
+			</select>
 			<button className="btn green" onClick={addNewTask}>Add new task</button>
-			<p>Task will be automaticly moved to TODO</p>
 		</div>
 	);
 };
