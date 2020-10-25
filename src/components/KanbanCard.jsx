@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { KanbanContext } from './KanbanContext';
-import {STATUS_DONE, STATUS_IN_PROGRESS, STATUS_TODO} from "../constants/statuses";
+import { STATUS_DONE, STATUS_IN_PROGRESS, STATUS_TODO } from '../constants/statuses';
 
 const KanbanCard = ({ title, description, subTasks, id, status  }) => {
 	const [showDetails, setShowDetails] = useState(false);
@@ -53,7 +53,9 @@ const KanbanCard = ({ title, description, subTasks, id, status  }) => {
 KanbanCard.propTypes = {
 	title: PropTypes.string,
 	description: PropTypes.string,
-	subTasks: PropTypes.array
+	subTasks: PropTypes.array,
+	id: PropTypes.number,
+	status: PropTypes.string
 };
 
 export default KanbanCard;

@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import './kanban-list.css';
 import KanbanList from './KanbanList';
 import { STATUS_IN_PROGRESS, STATUS_TODO, STATUS_DONE } from '../constants/statuses';
 import { KanbanContext } from './KanbanContext';
+import './kanban-list.css';
 
 const KanbanBoard = () => {
 	const { cardList } = useContext(KanbanContext);
